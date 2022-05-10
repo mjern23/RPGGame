@@ -11,7 +11,8 @@ public class Main {
 	private static Main m = new Main();
 	private static Adventurer adv = new Adventurer();
 	public AdventurerObject advObj;
-	private String name; 
+	private String name;
+
 	public static void main(String args[]) {
 		System.out.printf("Hello adventurer, what is your name?%n>> ");
 		m.name = m.scan.nextLine();
