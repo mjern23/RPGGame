@@ -27,7 +27,7 @@ public class Adventurer {
 		name = n;
 
 		Gson gson = new GsonBuilder().setPrettyPrinting().create();
-		file = new File(System.getProperty("user.dir") + "_" + n + ".json");
+		file = new File(System.getProperty("user.dir") +  "_" + n + ".json");
 		try {
 			if (this.file.createNewFile()) {
 				Classes c = pickClass();
@@ -73,13 +73,12 @@ public class Adventurer {
 	}
 
 	public void introduceUser() {
-		System.out.printf("Welcome %s. You have selected the class: %s. Your health is currently: ",
+		System.out.printf("Welcome %s. You have selected the class: %s. Your health is currently: %s.",
 				instantiateUser().getName(), instantiateUser().getUserClass(), instantiateUser().getHealth());
 	}
 
 	public Classes pickClass() {
-		System.out.printf(
-				"What class would you like to be?%n1) Figter (50 HP)%n2) Wizard (35 HP)%n3) Rogue (50 HP)%n4) Barbarian (75HP)%n>> ");
+		System.out.printf("What class would you like to be?%n1) Figter (50 HP)%n2) Wizard (35 HP)%n3) Rogue (50 HP)%n4) Barbarian (75HP)%n>> ");
 		int i = m.scan.nextInt();
 		String choice = null;
 		switch (i) {
