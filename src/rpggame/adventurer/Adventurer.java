@@ -37,7 +37,7 @@ public class Adventurer {
 				map.put("Name", name.substring(0, 1).toUpperCase() + name.substring(1).toLowerCase());
 				map.put("Health", c.getHealth());
 				map.put("Selection", c.name());
-				map.put("Armor", new String[] {"Helmet: ", "Chest: ", "Boots: "});
+				map.put("Armor", new String[] { "Helmet: ", "Chest: ", "Boots: " });
 				map.put("Path", new String[] {});
 				try {
 					Writer writer = Files
@@ -58,28 +58,28 @@ public class Adventurer {
 		}
 
 	}
-	
+
 	public AdventurerObject instantiateUser() {
 		try {
 			Gson gson = new GsonBuilder().setPrettyPrinting().create();
 			Reader reader2;
-			reader2 = Files.newBufferedReader(
-					Paths.get(System.getProperty("user.dir") + "_" + name + ".json"));
+			reader2 = Files.newBufferedReader(Paths.get(System.getProperty("user.dir") + "_" + name + ".json"));
 			AdventurerObject user = gson.fromJson(reader2, AdventurerObject.class);
 			return user;
-		}catch(Exception e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		return null;
 	}
-	
+
 	public void introduceUser() {
-		System.out.printf("Welcome %s. You have selected the class: %s. Your health is currently: ", 
+		System.out.printf("Welcome %s. You have selected the class: %s. Your health is currently: ",
 				instantiateUser().getName(), instantiateUser().getUserClass(), instantiateUser().getHealth());
 	}
 
 	public Classes pickClass() {
-		System.out.printf("What class would you like to be?%n1) Figter (50 HP)%n2) Wizard (35 HP)%n3) Rogue (50 HP)%n4) Barbarian (75HP)%n>> ");
+		System.out.printf(
+				"What class would you like to be?%n1) Figter (50 HP)%n2) Wizard (35 HP)%n3) Rogue (50 HP)%n4) Barbarian (75HP)%n>> ");
 		int i = m.scan.nextInt();
 		String choice = null;
 		switch (i) {
@@ -92,7 +92,7 @@ public class Adventurer {
 		case 3:
 			choice = "Rogue";
 			break;
-		case 4: 
+		case 4:
 			choice = "Barbarian";
 			break;
 		default:
