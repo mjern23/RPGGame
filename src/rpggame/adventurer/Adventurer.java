@@ -21,6 +21,7 @@ public class Adventurer {
 	public static Main m = new Main();
 	private String name = "";
 	private File file = new File("");
+	private int i = 1;
 	// private Class c = new Class();
 
 	public void createAdventurer(String n) {
@@ -37,6 +38,8 @@ public class Adventurer {
 				map.put("Name", name.substring(0, 1).toUpperCase() + name.substring(1).toLowerCase());
 				map.put("Health", c.getHealth());
 				map.put("Selection", c.name());
+				map.put("Level", i);
+				map.put("Milestone", 1);
 				map.put("Armor", new String[] { "Helmet: ", "Chest: ", "Boots: " });
 				map.put("Path", new String[] {});
 				try {
@@ -73,8 +76,9 @@ public class Adventurer {
 	}
 
 	public void introduceUser() {
-		System.out.printf("Welcome %s. You have selected the class: %s. Your health is currently: %s.",
-				instantiateUser().getName(), instantiateUser().getUserClass(), instantiateUser().getHealth());
+		System.out.println(instantiateUser().getLevel());
+		System.out.printf("Welcome %s. You have selected the class: %s. Your health is currently: %s. Your level is: %s. Your milestones are: %s",
+				instantiateUser().getName(), instantiateUser().getUserClass(), instantiateUser().getHealth(), instantiateUser().getLevel(), instantiateUser().getMS());
 	}
 
 	public Classes pickClass() {

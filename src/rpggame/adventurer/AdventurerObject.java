@@ -7,13 +7,18 @@ public class AdventurerObject {
 	private int Health;
 	private String[] Armor;
 	private String Selection;
+	private int Level;
+	private int Milestone;
+	
 
-	public AdventurerObject(String[] Path, int Health, String[] Armor, String Name, String Selection) {
+	public AdventurerObject(String[] Path, int Health, String Selection, String[] Armor, int Level , String Name, int Milestone) {
 		this.Name = Name;
 		this.Path = Path;
 		this.Health = Health;
 		this.Armor = Armor;
 		this.Selection = Selection;
+		this.Level = Level;
+		this.Milestone = Milestone;
 	}
 
 	public String getName() {
@@ -34,6 +39,14 @@ public class AdventurerObject {
 
 	public String getUserClass() {
 		return this.Selection;
+	}
+	
+	public int getLevel() {
+		return Level;
+	}
+	
+	public int getMS() {
+		return Milestone;
 	}
 
 }
