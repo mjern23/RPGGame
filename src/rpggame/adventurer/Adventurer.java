@@ -33,8 +33,7 @@ public class Adventurer {
 		try {
 			if (this.file.createNewFile()) {
 				Classes c = pickClass();
-				String path = this.file.getAbsolutePath();
-				System.out.println("We created a new file for you at " + path);
+//				String path = this.file.getAbsolutePath();
 				Map<String, Object> map = new HashMap<>();
 				map.put("Name", name.substring(0, 1).toUpperCase() + name.substring(1).toLowerCase());
 				map.put("Health", c.getHealth());
