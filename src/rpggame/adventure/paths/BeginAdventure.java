@@ -13,12 +13,12 @@ public class BeginAdventure {
 
 	public static void introduceUser() {
 		MethodHelp methodHelp = new MethodHelp();
-		System.out.printf("Professor Nick> Hello, %s. It's nice to meet you. My name is Professor Nick.",
+		System.out.printf("Professor Hearth> Hello, %s. It's nice to meet you. My name is Professor Hearth.",
 				Adventurer.user().getName()); 
 		methodHelp.cusWait(2);
-		System.out.printf("%nProfessor Nick> I will appear here every now and then to give you some tips along the way.");
+		System.out.printf("%nProfessor Hearth> I will appear here every now and then to give you some tips along the way.");
 		methodHelp.cusWait(2);
-		System.out.printf("%nProfessor Nick> Good luck on your journey, Adventurer.%n");
+		System.out.printf("%nProfessor Hearth> Good luck on your journey, Adventurer.%n");
 		methodHelp.cusWait(3);
 		pickStartPath();
 	}
