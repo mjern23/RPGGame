@@ -14,12 +14,13 @@ import com.google.gson.GsonBuilder;
 import com.google.gson.JsonIOException;
 
 import rpggame.Main;
+import rpggame.adventure.paths.BeginAdventure;
 import rpggame.classes.Classes;
 
 public class Adventurer {
 
 	public static Main m = new Main();
-	private String name = "";
+	private static String name = "";
 	private File file = new File("");
 	private int i = 1;
 	// private Class c = new Class();
@@ -28,7 +29,7 @@ public class Adventurer {
 		name = n;
 
 		Gson gson = new GsonBuilder().setPrettyPrinting().create();
-		file = new File(System.getProperty("user.dir") +  "_" + n + ".json");
+		file = new File(System.getProperty("user.dir") + "_" + n + ".json");
 		try {
 			if (this.file.createNewFile()) {
 				Classes c = pickClass();
@@ -41,13 +42,13 @@ public class Adventurer {
 				map.put("Level", i);
 				map.put("Milestone", 1);
 				map.put("Armor", new String[] { "Helmet: ", "Chest: ", "Boots: " });
-				map.put("Path", new String[] {});
+				map.put("Path", new int[] {});
 				try {
 					Writer writer = Files
 							.newBufferedWriter(Paths.get(System.getProperty("user.dir") + "_" + n + ".json"));
 					gson.toJson(map, writer);
 					writer.close();
-					introduceUser();
+					BeginAdventure.introduceUser();
 				} catch (IOException e) {
 					e.printStackTrace();
 				}
@@ -62,7 +63,7 @@ public class Adventurer {
 
 	}
 
-	public AdventurerObject instantiateUser() {
+	public static AdventurerObject user() {
 		try {
 			Gson gson = new GsonBuilder().setPrettyPrinting().create();
 			Reader reader2;
@@ -75,14 +76,9 @@ public class Adventurer {
 		return null;
 	}
 
-	public void introduceUser() {
-		System.out.println(instantiateUser().getLevel());
-		System.out.printf("Welcome %s. You have selected the class: %s. Your health is currently: %s. Your level is: %s. Your milestones are: %s",
-				instantiateUser().getName(), instantiateUser().getUserClass(), instantiateUser().getHealth(), instantiateUser().getLevel(), instantiateUser().getMS());
-	}
-
 	public Classes pickClass() {
-		System.out.printf("What class would you like to be?%n1) Figter (50 HP)%n2) Wizard (35 HP)%n3) Rogue (50 HP)%n4) Barbarian (75HP)%n>> ");
+		System.out.printf(
+				"What class would you like to be?%n1) Figter (50 HP)%n2) Wizard (35 HP)%n3) Rogue (50 HP)%n4) Barbarian (75HP)%n>> ");
 		int i = m.scan.nextInt();
 		String choice = null;
 		switch (i) {
