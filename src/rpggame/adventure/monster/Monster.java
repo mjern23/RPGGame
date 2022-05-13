@@ -1,7 +1,5 @@
 package rpggame.adventure.monster;
 
-import java.util.ArrayList;
-
 public class Monster {
 
 	private String name; 
@@ -28,6 +26,10 @@ public class Monster {
 		this.attack = (Math.random() * maxDamage) + minDamage;
 		
 		return attack;
+	}
+	
+	public String getName() {
+		return this.name;
 	}
 	
 }
