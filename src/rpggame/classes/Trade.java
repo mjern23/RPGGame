@@ -1,6 +1,6 @@
 package rpggame.classes;
 
-public enum Classes {
+public enum Trade {
 	Fighter(50), 
 	Wizard(35), 
 	Rogue(50), 
@@ -8,11 +8,11 @@ public enum Classes {
 
 	private int health = 0;
 
-	Classes(int h) {
+	Trade(int h) {
 		health = h;
 	}
 
-	public int getHealth() {
+	public int getClassHealth() {
 		return health;
 	}
 

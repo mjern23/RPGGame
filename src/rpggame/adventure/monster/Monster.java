@@ -1,5 +1,7 @@
 package rpggame.adventure.monster;
 
+import java.text.DecimalFormat;
+
 public class Monster {
 
 	private String name; 
@@ -9,7 +11,7 @@ public class Monster {
 	
 	public Monster(String name, double maxHealth, double minHealth, double maxDamage, double minDamage) {
 		this.name = name;
-		this.health = (Math.random() * maxHealth) + minHealth;
+		this.health =  (Math.random() * (maxHealth - minHealth)) + minHealth;
 		this.maxDamage = maxDamage;
 		this.minDamage = minDamage;
 //		Array[] monsterInfo = new ArrayList();
@@ -18,14 +20,16 @@ public class Monster {
 //		monsterInfo.add(this.attack);
 	}
 	
-	public double getHealth() {
-		return this.health;
+	public String getHealth() {
+		DecimalFormat format = new DecimalFormat("0.0");
+		return format.format(health);
 	}
 	
-	public double attack() {
+	public int attack() {
+		
 		this.attack = (Math.random() * maxDamage) + minDamage;
 		
-		return attack;
+		return (int) attack;
 	}
 	
 	public String getName() {

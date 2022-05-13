@@ -15,7 +15,7 @@ import com.google.gson.JsonIOException;
 
 import rpggame.Main;
 import rpggame.adventure.paths.BeginAdventure;
-import rpggame.classes.Classes;
+import rpggame.classes.Trade;
 
 public class Adventurer {
 
@@ -32,11 +32,11 @@ public class Adventurer {
 		file = new File(System.getProperty("user.dir") + "_" + n + ".json");
 		try {
 			if (this.file.createNewFile()) {
-				Classes c = pickClass();
+				Trade c = pickClass();
 //				String path = this.file.getAbsolutePath();
 				Map<String, Object> map = new HashMap<>();
 				map.put("Name", name.substring(0, 1).toUpperCase() + name.substring(1).toLowerCase());
-				map.put("Health", c.getHealth());
+				map.put("Health", c.getClassHealth());
 				map.put("Selection", c.name());
 				map.put("Level", i);
 				map.put("Milestone", 1);
@@ -75,7 +75,7 @@ public class Adventurer {
 		return null;
 	}
 
-	public Classes pickClass() {
+	public Trade pickClass() {
 		System.out.printf(
 				"What class would you like to be?%n1) Figter (50 HP)%n2) Wizard (35 HP)%n3) Rogue (50 HP)%n4) Barbarian (75HP)%n>> ");
 		int i = m.scan.nextInt();
@@ -99,7 +99,7 @@ public class Adventurer {
 			break;
 		}
 
-		Classes cla = Enum.valueOf(Classes.class, choice);
+		Trade cla = Enum.valueOf(Trade.class, choice);
 		return cla;
 	}
 

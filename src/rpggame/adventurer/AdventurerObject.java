@@ -1,6 +1,7 @@
 package rpggame.adventurer;
 
 import java.io.IOException;
+
 import java.io.Reader;
 import java.io.Writer;
 import java.nio.file.Files;
@@ -9,6 +10,8 @@ import java.util.Map;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+
+import rpggame.classes.Trade;
 
 public class AdventurerObject {
 
@@ -46,8 +49,8 @@ public class AdventurerObject {
 		return this.Armor;
 	}
 
-	public String getUserClass() {
-		return this.Selection;
+	public Trade getUserClass() {
+		return Enum.valueOf(Trade.class, this.Selection);
 	}
 
 	public int getLevel() {
@@ -76,6 +79,30 @@ public class AdventurerObject {
 			@SuppressWarnings("unchecked")
 			Map<String, Object> map = gson.fromJson(reader, Map.class);
 			map.put("Path", getPath());
+			try {
+				Writer writer = Files.newBufferedWriter(Paths
+						.get(System.getProperty("user.dir") + "_" + getName() + ".json"));
+				gson.toJson(map, writer);
+				writer.close();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+			reader.close();
+		} catch (IOException e1) {
+			e1.printStackTrace();
+		}
+	}
+	
+	public void takeDamage(int damage) {
+		this.Health = getHealth()-damage;
+		Reader reader;
+		try {
+			reader = Files.newBufferedReader(
+					Paths.get(System.getProperty("user.dir") + "_" + getName() + ".json"));
+			Gson gson = new GsonBuilder().setPrettyPrinting().create();
+			@SuppressWarnings("unchecked")
+			Map<String, Object> map = gson.fromJson(reader, Map.class);
+			map.put("Health", getHealth());
 			try {
 				Writer writer = Files.newBufferedWriter(Paths
 						.get(System.getProperty("user.dir") + "_" + getName() + ".json"));
