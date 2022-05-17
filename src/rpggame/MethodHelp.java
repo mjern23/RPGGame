@@ -12,4 +12,12 @@ public class MethodHelp {
 		}
 	}
 	
+	public void cusMilliWait(int time) {
+		try {
+			TimeUnit.MILLISECONDS.sleep(time);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+	}
+	
 }
