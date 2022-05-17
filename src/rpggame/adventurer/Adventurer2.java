@@ -1,13 +1,5 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package rpggame.adventurer;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonIOException;
-import com.google.gson.JsonSyntaxException;
 import java.io.File;
 import java.io.IOException;
 import java.io.Reader;
@@ -16,138 +8,157 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.HashMap;
 import java.util.Map;
+
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonIOException;
+import com.google.gson.JsonSyntaxException;
+
 import rpggame.Main;
-import rpggame.adventure.paths.BeginAdventure;
 import rpggame.adventure.paths.BeginAdventure2;
 import rpggame.classes.Trade;
 
-/**
- *
- */
 public class Adventurer2 extends javax.swing.JFrame {
 
-    public Adventurer2() {
-        initComponents();
-    }
-    @SuppressWarnings("unchecked")
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents() {
+	public Adventurer2() {
+		initComponents();
+	}
 
-        jLabel1 = new javax.swing.JLabel();
-        ClassChoices = new javax.swing.JComboBox<>();
-        jLabel2 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+	@SuppressWarnings("unchecked")
+	private void initComponents() {
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+		jLabel1 = new javax.swing.JLabel();
+		ClassChoices = new javax.swing.JComboBox<>();
+		jLabel2 = new javax.swing.JLabel();
+		jButton1 = new javax.swing.JButton();
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("E:\\eclipse-workspace\\RPGGame\\src\\rpggame\\Wizard_Image.png")); // NOI18N
-        jLabel1.setText("jLabel1");
+		setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        ClassChoices.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Fighter", "Wizard", "Rogue", "Barbarian" }));
-        ClassChoices.setToolTipText("");
+		jLabel1.setIcon(new javax.swing.ImageIcon("E:\\eclipse-workspace\\RPGGame\\src\\rpggame\\Wizard_Image.png"));
+		jLabel1.setText("jLabel1");
 
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("Select Class:");
+		ClassChoices.setModel(
+				new javax.swing.DefaultComboBoxModel<>(new String[] { "Fighter", "Wizard", "Rogue", "Barbarian" }));
+		ClassChoices.setToolTipText("");
 
-        jButton1.setText("Continue");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
+		jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+		jLabel2.setText("Select Class:");
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 261, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(35, 35, 35)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(ClassChoices, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(196, 196, 196)
-                        .addComponent(jButton1)))
-                .addGap(0, 332, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 571, Short.MAX_VALUE)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(102, 102, 102)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(ClassChoices, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
+		jButton1.setText("Continue");
+		jButton1.addActionListener(new java.awt.event.ActionListener() {
+			public void actionPerformed(java.awt.event.ActionEvent evt) {
+				jButton1ActionPerformed(evt);
+			}
+		});
 
-        pack();
-        setLocationRelativeTo(null);
-    }// </editor-fold>//GEN-END:initComponents
+		javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+		getContentPane().setLayout(layout);
+		layout.setHorizontalGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING).addGroup(layout
+				.createSequentialGroup()
+				.addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 261,
+						javax.swing.GroupLayout.PREFERRED_SIZE)
+				.addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+						.addGroup(layout.createSequentialGroup().addGap(35, 35, 35)
+								.addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 117,
+										javax.swing.GroupLayout.PREFERRED_SIZE)
+								.addGap(18, 18, 18).addComponent(ClassChoices, javax.swing.GroupLayout.PREFERRED_SIZE,
+										129, javax.swing.GroupLayout.PREFERRED_SIZE))
+						.addGroup(layout.createSequentialGroup().addGap(196, 196, 196).addComponent(jButton1)))
+				.addGap(0, 332, Short.MAX_VALUE)));
+		layout.setVerticalGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+				.addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 571, Short.MAX_VALUE)
+				.addGroup(layout.createSequentialGroup().addGap(102, 102, 102)
+						.addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+								.addComponent(ClassChoices, javax.swing.GroupLayout.PREFERRED_SIZE, 32,
+										javax.swing.GroupLayout.PREFERRED_SIZE)
+								.addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 32,
+										javax.swing.GroupLayout.PREFERRED_SIZE))
+						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED).addComponent(jButton1)
+						.addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)));
 
-    private Boolean cont = false;
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        createAdventurer(name);
-    }//GEN-LAST:event_jButton1ActionPerformed
+		pack();
+		setLocationRelativeTo(null);
+	}
 
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Adventurer2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Adventurer2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Adventurer2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Adventurer2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
+	private Boolean cont = false;
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                
-            }
-        });
-    }
-    
-    	public static Main m = new Main();
+	private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {
+		createAdventurer(name);
+	}
+
+	public static void main(String args[]) {
+		try {
+			for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+				if ("Nimbus".equals(info.getName())) {
+					javax.swing.UIManager.setLookAndFeel(info.getClassName());
+					break;
+				}
+			}
+		} catch (ClassNotFoundException ex) {
+			java.util.logging.Logger.getLogger(Adventurer2.class.getName()).log(java.util.logging.Level.SEVERE, null,
+					ex);
+		} catch (InstantiationException ex) {
+			java.util.logging.Logger.getLogger(Adventurer2.class.getName()).log(java.util.logging.Level.SEVERE, null,
+					ex);
+		} catch (IllegalAccessException ex) {
+			java.util.logging.Logger.getLogger(Adventurer2.class.getName()).log(java.util.logging.Level.SEVERE, null,
+					ex);
+		} catch (javax.swing.UnsupportedLookAndFeelException ex) {
+			java.util.logging.Logger.getLogger(Adventurer2.class.getName()).log(java.util.logging.Level.SEVERE, null,
+					ex);
+		}
+		
+		java.awt.EventQueue.invokeLater(new Runnable() {
+			public void run() {
+
+			}
+		});
+	}
+
+	public static Main m = new Main();
 	private static String name = "";
 	private File file = new File("");
 	private int i = 1;
-	// private Class c = new Class();
 
-        public void giveName(String n){
-            name = n;
-            new Adventurer2().setVisible(true);
-            for(String classstr : classes){
-                ClassChoices.addItem(classstr);
-            }
-        }
-        
+	public void giveName(String n) {
+		name = n;
+		file = new File(System.getProperty("user.dir") + "_" + n + ".json");
+		if (!file.exists()) {
+			new Adventurer2().setVisible(true);
+		} else if (file.exists()) {
+			// Start from path
+			int[] path = user().getPath();
+			switch (path[0]) {
+			case 1:
+				System.out.println("1");
+				// FarmerStart.contPath();
+				break;
+			case 2:
+				System.out.println("2");
+				// HermitStart.contPath();
+				break;
+			case 3:
+				System.out.println("3");
+				// WarriorStart.contPath();
+				break;
+			default:
+				System.out.println("Something went really wrong here.");
+				break;
+			}
+			return;
+		}
+		for (String classstr : classes) {
+			ClassChoices.addItem(classstr);
+		}
+	}
+
 	public void createAdventurer(String n) {
 		name = n;
 
 		Gson gson = new GsonBuilder().setPrettyPrinting().create();
 		file = new File(System.getProperty("user.dir") + "_" + n + ".json");
 		try {
-			if (this.file.createNewFile()) {
+			if (!file.exists()) {
 				Trade c = pickClass();
 //				String path = this.file.getAbsolutePath();
 				Map<String, Object> map = new HashMap<>();
@@ -164,13 +175,11 @@ public class Adventurer2 extends javax.swing.JFrame {
 					gson.toJson(map, writer);
 					writer.close();
 					new BeginAdventure2().introduceUser();
-                                        this.dispose();
+					this.dispose();
 				} catch (IOException e) {
 				}
-			} else {
-
 			}
-		} catch (JsonIOException | IOException e) {
+		} catch (JsonIOException e) {
 		}
 
 	}
@@ -187,11 +196,10 @@ public class Adventurer2 extends javax.swing.JFrame {
 		return null;
 	}
 
-         String[] classes = {"Fighter", "Wizard", "Rogue", "Barbarian"};
-         
-        
+	String[] classes = { "Fighter", "Wizard", "Rogue", "Barbarian" };
+
 	public Trade pickClass() {
-                String choice =  ClassChoices.getSelectedItem().toString();
+		String choice = ClassChoices.getSelectedItem().toString();
 //		System.out.printf(
 //				"What class would you like to be?%n1) Figter (50 HP)%n2) Wizard (35 HP)%n3) Rogue (50 HP)%n4) Barbarian (75HP)%n>> ");
 //		int i = m.scan.nextInt();
@@ -217,14 +225,9 @@ public class Adventurer2 extends javax.swing.JFrame {
 		return cla;
 	}
 
-
-
-
-    // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JComboBox<String> ClassChoices;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    // End of variables declaration//GEN-END:variables
+	private javax.swing.JComboBox<String> ClassChoices;
+	private javax.swing.JButton jButton1;
+	private javax.swing.JLabel jLabel1;
+	private javax.swing.JLabel jLabel2;
 
 }

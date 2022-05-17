@@ -1,10 +1,7 @@
 package rpggame.classes;
 
 public enum Trade {
-	Fighter(50), 
-	Wizard(35), 
-	Rogue(50), 
-	Barbarian(75);
+	Fighter(50), Wizard(35), Rogue(50), Barbarian(75);
 
 	private int health = 0;
 

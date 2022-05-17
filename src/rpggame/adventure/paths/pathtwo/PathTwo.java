@@ -8,5 +8,5 @@ public class PathTwo {
 		System.out.println("You picked path 2!");
 		Adventurer.user().addPathChoice(2);
 	}
-	
+
 }

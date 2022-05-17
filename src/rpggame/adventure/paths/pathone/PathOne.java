@@ -14,8 +14,7 @@ public class PathOne {
 		int damage = m.attack();
 		Adventurer.user().takeDamage(damage);
 		System.out.printf("%s did %s damage to you. ", m.getName(), damage);
-		
-		
+
 		Trade t = Adventurer.user().getUserClass();
 		System.out.printf("Your health is currently: %s / %s", Adventurer.user().getHealth(), t.getClassHealth());
 	}

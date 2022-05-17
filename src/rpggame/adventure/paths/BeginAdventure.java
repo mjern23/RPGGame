@@ -14,9 +14,10 @@ public class BeginAdventure {
 	public static void introduceUser() {
 		MethodHelp methodHelp = new MethodHelp();
 		System.out.printf("Professor Hearth> Hello, %s. It's nice to meet you. My name is Professor Hearth.",
-				Adventurer.user().getName()); 
+				Adventurer.user().getName());
 		methodHelp.cusWait(2);
-		System.out.printf("%nProfessor Hearth> I will appear here every now and then to give you some tips along the way.");
+		System.out.printf(
+				"%nProfessor Hearth> I will appear here every now and then to give you some tips along the way.");
 		methodHelp.cusWait(2);
 		System.out.printf("%nProfessor Hearth> Good luck on your journey, Adventurer.%n");
 		methodHelp.cusWait(3);
@@ -24,7 +25,8 @@ public class BeginAdventure {
 	}
 
 	public static void pickStartPath() {
-		System.out.printf("???> Hello, Adventurer. You have 3 choices here. Make your decision wisely.%n1) %n2) %n3)%n>> ");
+		System.out.printf(
+				"???> Hello, Adventurer. You have 3 choices here. Make your decision wisely.%n1) %n2) %n3)%n>> ");
 		MethodHelp methodHelp = new MethodHelp();
 		int choice = m.scan.nextInt();
 		methodHelp.cusWait(3);
