@@ -23,7 +23,8 @@ public class AdventurerObject {
 	private int Level;
 	private int Milestone;
 
-	public AdventurerObject(int[] Path, int Health, String Selection, String[] Armor, int Level, String Name, int Milestone) {
+	public AdventurerObject(int[] Path, int Health, String Selection, String[] Armor, int Level, String Name,
+			int Milestone) {
 		this.Name = Name;
 		this.Path = Path;
 		this.Health = Health;
@@ -60,7 +61,7 @@ public class AdventurerObject {
 	public int getMS() {
 		return Milestone;
 	}
-	
+
 	public void addPathChoice(int assignment) {
 		int[] newArray = { assignment };
 		int aLen = Path.length;
@@ -69,19 +70,18 @@ public class AdventurerObject {
 
 		System.arraycopy(Path, 0, result, 0, aLen);
 		System.arraycopy(newArray, 0, result, aLen, bLen);
-		
+
 		this.Path = result;
 		Reader reader;
 		try {
-			reader = Files.newBufferedReader(
-					Paths.get(System.getProperty("user.dir") + "_" + getName() + ".json"));
+			reader = Files.newBufferedReader(Paths.get(System.getProperty("user.dir") + "_" + getName() + ".json"));
 			Gson gson = new GsonBuilder().setPrettyPrinting().create();
 			@SuppressWarnings("unchecked")
 			Map<String, Object> map = gson.fromJson(reader, Map.class);
 			map.put("Path", getPath());
 			try {
-				Writer writer = Files.newBufferedWriter(Paths
-						.get(System.getProperty("user.dir") + "_" + getName() + ".json"));
+				Writer writer = Files
+						.newBufferedWriter(Paths.get(System.getProperty("user.dir") + "_" + getName() + ".json"));
 				gson.toJson(map, writer);
 				writer.close();
 			} catch (IOException e) {
@@ -92,20 +92,19 @@ public class AdventurerObject {
 			e1.printStackTrace();
 		}
 	}
-	
+
 	public void takeDamage(int damage) {
-		this.Health = getHealth()-damage;
+		this.Health = getHealth() - damage;
 		Reader reader;
 		try {
-			reader = Files.newBufferedReader(
-					Paths.get(System.getProperty("user.dir") + "_" + getName() + ".json"));
+			reader = Files.newBufferedReader(Paths.get(System.getProperty("user.dir") + "_" + getName() + ".json"));
 			Gson gson = new GsonBuilder().setPrettyPrinting().create();
 			@SuppressWarnings("unchecked")
 			Map<String, Object> map = gson.fromJson(reader, Map.class);
 			map.put("Health", getHealth());
 			try {
-				Writer writer = Files.newBufferedWriter(Paths
-						.get(System.getProperty("user.dir") + "_" + getName() + ".json"));
+				Writer writer = Files
+						.newBufferedWriter(Paths.get(System.getProperty("user.dir") + "_" + getName() + ".json"));
 				gson.toJson(map, writer);
 				writer.close();
 			} catch (IOException e) {
