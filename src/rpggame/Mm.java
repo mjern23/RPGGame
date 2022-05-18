@@ -25,7 +25,7 @@ public class Mm extends javax.swing.JFrame {
 		setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 		setBackground(new java.awt.Color(255, 255, 255));
 
-		jLabel1.setIcon(new javax.swing.ImageIcon("E:\\eclipse-workspace\\RPGGame\\src\\rpggame\\Wizard_Image.png"));
+		jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/rpggame/Wizard_Image.png")));
 		jLabel1.setText("jLabel1");
 
 		jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -101,13 +101,7 @@ public class Mm extends javax.swing.JFrame {
 					break;
 				}
 			}
-		} catch (ClassNotFoundException ex) {
-			java.util.logging.Logger.getLogger(Mm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-		} catch (InstantiationException ex) {
-			java.util.logging.Logger.getLogger(Mm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-		} catch (IllegalAccessException ex) {
-			java.util.logging.Logger.getLogger(Mm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-		} catch (javax.swing.UnsupportedLookAndFeelException ex) {
+		} catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
 			java.util.logging.Logger.getLogger(Mm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
 		}
 
