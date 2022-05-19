@@ -99,12 +99,12 @@ public class PickPath extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {                                         
         // Hermit
-         Adventurer2.user().addPathChoice(2);
+         Adventurer2.user().addPathChoice(3);
     }
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {                                         
         // Warrior
-         Adventurer2.user().addPathChoice(3);
+         Adventurer2.user().addPathChoice(2);
     }
 
 
