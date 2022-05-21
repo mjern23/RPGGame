@@ -2,7 +2,6 @@ package rpggame;
 
 import javax.swing.JScrollPane;
 
-import rpggame.adventurer.Adventurer;
 import rpggame.adventurer.Adventurer2;
 
 public class Mm extends javax.swing.JFrame {

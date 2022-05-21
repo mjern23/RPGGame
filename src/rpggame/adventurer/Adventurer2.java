@@ -16,6 +16,7 @@ import com.google.gson.JsonSyntaxException;
 
 import rpggame.Main;
 import rpggame.adventure.paths.BeginAdventure2;
+import rpggame.adventure.paths.farmerpath.FarmerStart;
 import rpggame.classes.Trade;
 
 public class Adventurer2 extends javax.swing.JFrame {
@@ -122,7 +123,7 @@ public class Adventurer2 extends javax.swing.JFrame {
 			switch (path[0]) {
 			case 1:
 				System.out.println("1");
-				// FarmerStart.contPath();
+				new FarmerStart().contPath();
 				break;
 			case 2:
 				System.out.println("2");

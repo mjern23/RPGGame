@@ -23,6 +23,7 @@ public class BeginAdventure2 extends javax.swing.JFrame {
 
 		setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 		addMouseListener(new java.awt.event.MouseAdapter() {
+                        @Override
 			public void mouseClicked(java.awt.event.MouseEvent evt) {
 				formMouseClicked(evt);
 			}
@@ -38,11 +39,13 @@ public class BeginAdventure2 extends javax.swing.JFrame {
 		jLabel4.setForeground(new java.awt.Color(0, 0, 0));
 		jLabel4.setText("(Click to continue)");
 		jLabel4.addMouseListener(new java.awt.event.MouseAdapter() {
+                        @Override
 			public void mouseClicked(java.awt.event.MouseEvent evt) {
 				jLabel4MouseClicked(evt);
 			}
 		});
 		jLabel4.addKeyListener(new java.awt.event.KeyAdapter() {
+                        @Override
 			public void keyPressed(java.awt.event.KeyEvent evt) {
 				jLabel4KeyPressed(evt);
 			}
