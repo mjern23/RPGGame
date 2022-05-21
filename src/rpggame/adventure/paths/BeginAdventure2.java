@@ -28,6 +28,8 @@ public class BeginAdventure2 extends javax.swing.JFrame {
 				formMouseClicked(evt);
 			}
 		});
+		
+		setTitle("Meet the Professor");
 
 		jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/rpggame/Wizard_Image.png"))); // NOI18N
 		jLabel1.setText("jLabel1");

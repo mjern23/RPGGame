@@ -23,6 +23,7 @@ public class Mm extends javax.swing.JFrame {
 
 		setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 		setBackground(new java.awt.Color(255, 255, 255));
+		this.setTitle("Setup Your Character");
 
 		jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/rpggame/Wizard_Image.png")));
 		jLabel1.setText("jLabel1");
