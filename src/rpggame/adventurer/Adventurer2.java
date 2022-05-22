@@ -41,7 +41,7 @@ public class Adventurer2 extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("E:\\eclipse-workspace\\RPGGame\\src\\rpggame\\Wizard_Image.png")); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/rpggame/wizard_guy.png"))); // NOI18N
         jLabel1.setText("jLabel1");
 
         ClassChoices.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Fighter", "Wizard", "Rogue", "Barbarian" }));
@@ -77,11 +77,10 @@ public class Adventurer2 extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(196, 196, 196)
                         .addComponent(jButton1)))
-                .addGap(0, 332, Short.MAX_VALUE))
+                .addContainerGap(892, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 571, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
                 .addGap(102, 102, 102)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -89,7 +88,11 @@ public class Adventurer2 extends javax.swing.JFrame {
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(403, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 559, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         pack();

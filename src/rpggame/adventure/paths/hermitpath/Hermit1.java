@@ -159,6 +159,10 @@ public class Hermit1 extends javax.swing.JFrame {
         setVisible(true);
         pack();
     }
+    
+    public void rightPath(){
+        
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botBut;

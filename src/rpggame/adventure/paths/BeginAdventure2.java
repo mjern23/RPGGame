@@ -33,7 +33,7 @@ public class BeginAdventure2 extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/rpggame/Wizard_Image.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/rpggame/wizard_guy.png"))); // NOI18N
         jLabel1.setText("jLabel1");
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
