@@ -13,6 +13,7 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonIOException;
 import com.google.gson.JsonSyntaxException;
+import java.awt.event.KeyEvent;
 
 import rpggame.Main;
 import rpggame.adventure.paths.BeginAdventure2;
@@ -24,63 +25,87 @@ public class Adventurer2 extends javax.swing.JFrame {
 	public Adventurer2() {
 		initComponents();
 	}
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    private void initComponents() {
 
-	@SuppressWarnings("unchecked")
-	private void initComponents() {
+        jLabel1 = new javax.swing.JLabel();
+        ClassChoices = new javax.swing.JComboBox<>();
+        jLabel2 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
 
-		jLabel1 = new javax.swing.JLabel();
-		ClassChoices = new javax.swing.JComboBox<>();
-		jLabel2 = new javax.swing.JLabel();
-		jButton1 = new javax.swing.JButton();
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                formKeyPressed(evt);
+            }
+        });
 
-		setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-		setTitle("Setup Your Character");
-		
-		jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/rpggame/Wizard_Image.png")));
-		jLabel1.setText("jLabel1");
+        jLabel1.setIcon(new javax.swing.ImageIcon("E:\\eclipse-workspace\\RPGGame\\src\\rpggame\\Wizard_Image.png")); // NOI18N
+        jLabel1.setText("jLabel1");
 
-		ClassChoices.setModel(
-				new javax.swing.DefaultComboBoxModel<>(new String[] { "Fighter", "Wizard", "Rogue", "Barbarian" }));
-		ClassChoices.setToolTipText("");
+        ClassChoices.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Fighter", "Wizard", "Rogue", "Barbarian" }));
+        ClassChoices.setToolTipText("");
+        ClassChoices.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                ClassChoicesKeyPressed(evt);
+            }
+        });
 
-		jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-		jLabel2.setText("Select Class:");
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setText("Select Class:");
 
-		jButton1.setText("Continue");
-		jButton1.addActionListener(new java.awt.event.ActionListener() {
-			public void actionPerformed(java.awt.event.ActionEvent evt) {
-				jButton1ActionPerformed(evt);
-			}
-		});
+        jButton1.setText("Continue");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
-		javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-		getContentPane().setLayout(layout);
-		layout.setHorizontalGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING).addGroup(layout
-				.createSequentialGroup()
-				.addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 261,
-						javax.swing.GroupLayout.PREFERRED_SIZE)
-				.addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-						.addGroup(layout.createSequentialGroup().addGap(35, 35, 35)
-								.addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 117,
-										javax.swing.GroupLayout.PREFERRED_SIZE)
-								.addGap(18, 18, 18).addComponent(ClassChoices, javax.swing.GroupLayout.PREFERRED_SIZE,
-										129, javax.swing.GroupLayout.PREFERRED_SIZE))
-						.addGroup(layout.createSequentialGroup().addGap(196, 196, 196).addComponent(jButton1)))
-				.addGap(0, 332, Short.MAX_VALUE)));
-		layout.setVerticalGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-				.addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 571, Short.MAX_VALUE)
-				.addGroup(layout.createSequentialGroup().addGap(102, 102, 102)
-						.addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-								.addComponent(ClassChoices, javax.swing.GroupLayout.PREFERRED_SIZE, 32,
-										javax.swing.GroupLayout.PREFERRED_SIZE)
-								.addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 32,
-										javax.swing.GroupLayout.PREFERRED_SIZE))
-						.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED).addComponent(jButton1)
-						.addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)));
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 261, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(35, 35, 35)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(ClassChoices, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(196, 196, 196)
+                        .addComponent(jButton1)))
+                .addGap(0, 332, Short.MAX_VALUE))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 571, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(102, 102, 102)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(ClassChoices, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButton1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
 
-		pack();
-		setLocationRelativeTo(null);
+        pack();
+        setLocationRelativeTo(null);
+    }// </editor-fold>//GEN-END:initComponents
+
+    private void formKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_formKeyPressed
+        if (evt.getKeyCode()==KeyEvent.VK_ENTER){
+            createAdventurer(name);
 	}
+    }//GEN-LAST:event_formKeyPressed
+
+    private void ClassChoicesKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ClassChoicesKeyPressed
+        if (evt.getKeyCode()==KeyEvent.VK_ENTER){
+            createAdventurer(name);
+	}
+    }//GEN-LAST:event_ClassChoicesKeyPressed
 
 	private Boolean cont = false;
 
@@ -217,10 +242,10 @@ public class Adventurer2 extends javax.swing.JFrame {
 		Trade cla = Enum.valueOf(Trade.class, choice);
 		return cla;
 	}
-
-	private javax.swing.JComboBox<String> ClassChoices;
-	private javax.swing.JButton jButton1;
-	private javax.swing.JLabel jLabel1;
-	private javax.swing.JLabel jLabel2;
-
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JComboBox<String> ClassChoices;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    // End of variables declaration//GEN-END:variables
 }
