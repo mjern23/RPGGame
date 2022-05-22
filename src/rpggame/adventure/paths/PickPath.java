@@ -2,6 +2,7 @@
 package rpggame.adventure.paths;
 
 import rpggame.adventure.paths.farmerpath.FarmerStart;
+import rpggame.adventure.paths.hermitpath.HermitStart;
 import rpggame.adventurer.Adventurer2;
 
 public class PickPath extends javax.swing.JFrame {
@@ -96,18 +97,20 @@ public class PickPath extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {                                         
         // Farmer
         Adventurer2.user().addPathChoice(1);
+        this.dispose();
         new FarmerStart().contPath();
         
     }
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {                                         
-        // Hermit
          Adventurer2.user().addPathChoice(3);
+         // Warrior
     }
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {                                         
-        // Warrior
          Adventurer2.user().addPathChoice(2);
+         this.dispose();
+         new HermitStart().contPath();
     }
 
 

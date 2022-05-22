@@ -18,6 +18,7 @@ import java.awt.event.KeyEvent;
 import rpggame.Main;
 import rpggame.adventure.paths.BeginAdventure2;
 import rpggame.adventure.paths.farmerpath.FarmerStart;
+import rpggame.adventure.paths.hermitpath.HermitStart;
 import rpggame.classes.Trade;
 
 public class Adventurer2 extends javax.swing.JFrame {
@@ -152,11 +153,9 @@ public class Adventurer2 extends javax.swing.JFrame {
 				new FarmerStart().contPath();
 				break;
 			case 2:
-				System.out.println("2");
-				// HermitStart.contPath();
+				new HermitStart().contPath();
 				break;
 			case 3:
-				System.out.println("3");
 				// WarriorStart.contPath();
 				break;
 			default:
