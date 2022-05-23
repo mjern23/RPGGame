@@ -5,7 +5,6 @@
 package rpggame.adventure.paths.hermitpath;
 
 import java.awt.event.KeyEvent;
-import rpggame.adventure.paths.farmerpath.FarmerStart;
 import rpggame.adventurer.Adventurer2;
 import static rpggame.adventurer.Adventurer2.user;
 

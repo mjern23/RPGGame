@@ -11,12 +11,12 @@ import static rpggame.adventurer.Adventurer2.user;
  *
  * @author Mikey
  */
-public class Hermit1 extends javax.swing.JFrame {
+public class Hermit2 extends javax.swing.JFrame {
 
     /**
-     * Creates new form Hermit1
+     * Creates new form Hermit2
      */
-    public Hermit1() {
+    public Hermit2() {
         initComponents();
     }
 
@@ -31,8 +31,8 @@ public class Hermit1 extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
         text = new javax.swing.JLabel();
+        wdyd = new javax.swing.JLabel();
         botBut = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
         topBut = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -41,9 +41,10 @@ public class Hermit1 extends javax.swing.JFrame {
         jLabel1.setText("jLabel1");
 
         text.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        text.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         text.setText("PLACEHOLDER");
-        text.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+
+        wdyd.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        wdyd.setText("What do you do?");
 
         botBut.setText("PLACEHOLDER");
         botBut.setBorder(null);
@@ -53,40 +54,34 @@ public class Hermit1 extends javax.swing.JFrame {
             }
         });
 
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("What do you do?");
-
         topBut.setText("PLACEHOLDER");
         topBut.setBorder(null);
-        topBut.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                topButActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 302, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap()
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 307, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(text, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addGroup(layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(text, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(247, 247, 247)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(botBut, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(topBut, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(0, 0, Short.MAX_VALUE)))
+                                .addGap(0, 19, Short.MAX_VALUE)
+                                .addComponent(wdyd, javax.swing.GroupLayout.PREFERRED_SIZE, 601, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addContainerGap())
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(70, 70, 70)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(85, Short.MAX_VALUE))))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(botBut, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(235, 235, 235))))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                    .addContainerGap(581, Short.MAX_VALUE)
+                    .addComponent(topBut, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(236, 236, 236)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -94,32 +89,27 @@ public class Hermit1 extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(text, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(59, 59, 59)
-                        .addComponent(jLabel2)
-                        .addGap(18, 18, 18)
-                        .addComponent(topBut, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(botBut, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(text, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(42, 42, 42)
+                        .addComponent(wdyd)
+                        .addGap(89, 89, 89)
+                        .addComponent(botBut, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 562, Short.MAX_VALUE))
                 .addContainerGap())
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(154, 154, 154)
+                    .addComponent(topBut, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(377, Short.MAX_VALUE)))
         );
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void topButActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_topButActionPerformed
-        Adventurer2.user().addPathChoice(1);
-        new Hermit2().contPath();
-        this.dispose();
-    }//GEN-LAST:event_topButActionPerformed
-
     private void botButActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botButActionPerformed
-        Adventurer2.user().addPathChoice(2);
-        new Hermit2().contPath();
-        this.dispose();
+        // TODO add your handling code here:
     }//GEN-LAST:event_botButActionPerformed
 
     /**
@@ -139,20 +129,20 @@ public class Hermit1 extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Hermit1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Hermit2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Hermit1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Hermit2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Hermit1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Hermit2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Hermit1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Hermit2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Hermit1().setVisible(true);
+                new Hermit2().setVisible(true);
             }
         });
     }
@@ -160,41 +150,42 @@ public class Hermit1 extends javax.swing.JFrame {
     int[] path = user().getPath();
     
     public void contPath(){
-        if(path.length >= 3){
-            new Hermit2().contPath();
-        }else{
-            switch(path[1]){
-                case 1:
-                    leftPath();
-                    break;
-                case 2:
-                   // Hermit1.rightPath();
-                    break;
-                default:
-                    System.out.println("Something went seriously wrong. Good luck.");
-                    break;
-            }
+        switch(path[2]){
+            case 1:
+                fight();
+                break;
+            case 2: 
+                wake();
+                break;
+            default:
+                System.out.println("Something went really wrong...oops");
+                break;
         }
     }
     
-    public void leftPath(){
-        text.setText("After treking through the cave, you finally spot the orc, which appears to be sleeping.");
-        topBut.setText("Attack");
-        botBut.setText("Wake it up");
+    public void fight(){
+        setTitle("You Fight the Orc");
+        text.setText("Congrats " + Adventurer2.user().getName() + " you killed the orc. You saved my cave!");
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/rpggame/adventure/paths/hermitpath/Dead_Orc.png")));
+        wdyd.setVisible(false);
+        topBut.setVisible(false);
+        botBut.setVisible(false);
         setVisible(true);
-        pack();
-        setTitle("Going Left in the Cave");
     }
     
-    public void rightPath(){
-        
+    public void wake(){
+        setTitle("You Wake the Orc");
+        text.setText("Waking the orc only angered it more.");
+        topBut.setText("Negotiate");
+        botBut.setText("Trick it");
+        setVisible(true);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botBut;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel text;
     private javax.swing.JButton topBut;
+    private javax.swing.JLabel wdyd;
     // End of variables declaration//GEN-END:variables
 }

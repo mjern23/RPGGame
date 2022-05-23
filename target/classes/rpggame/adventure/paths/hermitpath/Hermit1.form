@@ -97,6 +97,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="PLACEHOLDER"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botButActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel2">
       <Properties>
@@ -108,6 +111,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="PLACEHOLDER"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="topButActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>
