@@ -158,6 +158,7 @@ public class Hermit1 extends javax.swing.JFrame {
         botBut.setText("Wake it up");
         setVisible(true);
         pack();
+        setTitle("Going Left in the Cave");
     }
     
     public void rightPath(){

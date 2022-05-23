@@ -39,6 +39,7 @@ public class HermitStart extends javax.swing.JFrame {
         cont = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Help the Hermit");
         addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 formMouseClicked(evt);
@@ -52,6 +53,11 @@ public class HermitStart extends javax.swing.JFrame {
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/rpggame/adventure/paths/hermitpath/181-1818011_samurai-sheet-enemies-metal-slug-huge-hermit-pixel-art2.png"))); // NOI18N
         jLabel2.setText("jLabel2");
+        jLabel2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jLabel2KeyPressed(evt);
+            }
+        });
 
         hermitConvo.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         hermitConvo.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -135,7 +141,7 @@ public class HermitStart extends javax.swing.JFrame {
                 .addComponent(leftButton, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(rightButton, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(254, Short.MAX_VALUE))
+                .addContainerGap(257, Short.MAX_VALUE))
         );
 
         pack();
@@ -179,6 +185,14 @@ public class HermitStart extends javax.swing.JFrame {
             pathText.setVisible(true);
         }
     }//GEN-LAST:event_formKeyPressed
+
+    private void jLabel2KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jLabel2KeyPressed
+        cont.setVisible(false);
+        hermitConvo.setText("My cave is as far as I can lead you, good luck Adventurer. I appreciate your help.");
+        rightButton.setVisible(true);
+        leftButton.setVisible(true);
+        pathText.setVisible(true);
+    }//GEN-LAST:event_jLabel2KeyPressed
 
     /**
      * @param args the command line arguments

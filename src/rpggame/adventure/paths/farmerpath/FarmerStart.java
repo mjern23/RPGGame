@@ -31,6 +31,7 @@ public class FarmerStart extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Help the Farmer");
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/rpggame/adventure/paths/farmerpath/Farmer2.png"))); // NOI18N
         jLabel1.setText("jLabel1");
