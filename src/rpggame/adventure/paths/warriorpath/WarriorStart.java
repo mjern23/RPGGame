@@ -166,8 +166,8 @@ public class WarriorStart extends javax.swing.JFrame {
     public void leftPath(){
         text.setText(String.format("<html><body style=\"text-align: justify;  text-justify: inter-word;"
                 + "\">%s</body></html>","The warrior wants a break, but he has gate duty today. He says he’ll owe you for taking over gate duty for him. He tells you the time and you head over to the gate to guard it. A couple hours later, your gate shift you were running is almost over, you see figures coming from the forest, dressed in all black. It’s bandits, you call for backup but nobody hears you, you’re the only one on gate shift right now. "));
-        topBut.setText("Attack");
-        botBut.setText("Wake it up");
+        topBut.setText("Call for Help");
+        botBut.setText("Fight");
         setVisible(true);
         pack();
         setTitle("Going Left in the Cave");
