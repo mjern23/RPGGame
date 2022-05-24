@@ -160,7 +160,7 @@ public class Adventurer2 extends javax.swing.JFrame {
 				new HermitStart().contPath();
 				break;
 			case 3:
-				// WarriorStart.contPath();
+				new WarriorStart().contPath();
 				break;
 			default:
 				System.out.println("Something went really wrong here.");
