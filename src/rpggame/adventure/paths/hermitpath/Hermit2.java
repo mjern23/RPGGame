@@ -56,6 +56,11 @@ public class Hermit2 extends javax.swing.JFrame {
 
         topBut.setText("PLACEHOLDER");
         topBut.setBorder(null);
+        topBut.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                topButActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -109,8 +114,16 @@ public class Hermit2 extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void botButActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botButActionPerformed
-        // TODO add your handling code here:
+        Adventurer2.user().addPathChoice(2);
+        new Hermit3().contPath();
+        this.dispose();
     }//GEN-LAST:event_botButActionPerformed
+
+    private void topButActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_topButActionPerformed
+        Adventurer2.user().addPathChoice(1);
+        new Hermit3().contPath();
+        this.dispose();
+    }//GEN-LAST:event_topButActionPerformed
 
     /**
      * @param args the command line arguments

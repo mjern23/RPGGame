@@ -168,7 +168,7 @@ public class Hermit1 extends javax.swing.JFrame {
                     leftPath();
                     break;
                 case 2:
-                   // Hermit1.rightPath();
+                    rightPath();
                     break;
                 default:
                     System.out.println("Something went seriously wrong. Good luck.");
@@ -187,7 +187,8 @@ public class Hermit1 extends javax.swing.JFrame {
     }
     
     public void rightPath(){
-        
+        text.setText("idk u died or smt allen didnt finish the story");
+        setVisible(true);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
