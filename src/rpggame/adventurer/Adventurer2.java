@@ -1,5 +1,6 @@
 package rpggame.adventurer;
 
+import java.awt.event.KeyEvent;
 import java.io.File;
 import java.io.IOException;
 import java.io.Reader;
@@ -13,12 +14,12 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonIOException;
 import com.google.gson.JsonSyntaxException;
-import java.awt.event.KeyEvent;
 
 import rpggame.Main;
 import rpggame.adventure.paths.BeginAdventure2;
 import rpggame.adventure.paths.farmerpath.FarmerStart;
 import rpggame.adventure.paths.hermitpath.HermitStart;
+import rpggame.adventure.paths.warriorpath.WarriorStart;
 import rpggame.classes.Trade;
 
 public class Adventurer2 extends javax.swing.JFrame {

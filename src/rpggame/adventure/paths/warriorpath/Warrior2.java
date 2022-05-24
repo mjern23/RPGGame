@@ -100,6 +100,6 @@ public class Warrior2 extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
 
     void contPath() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        setVisible(true);
     }
 }
