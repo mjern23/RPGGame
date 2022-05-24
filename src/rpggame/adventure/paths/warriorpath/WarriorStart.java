@@ -4,6 +4,7 @@
  */
 package rpggame.adventure.paths.warriorpath;
 
+import rpggame.adventurer.Adventurer2;
 import static rpggame.adventurer.Adventurer2.user;
 
 /**
@@ -35,6 +36,7 @@ public class WarriorStart extends javax.swing.JFrame {
         topBut = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(892, 571));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/rpggame/adventure/paths/warriorpath/cool man.jpg"))); // NOI18N
         jLabel1.setText("jLabel1");
@@ -43,13 +45,24 @@ public class WarriorStart extends javax.swing.JFrame {
         text.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         text.setText("The warrior wants a break, but he has gate duty today. He says he’ll owe you for taking over gate duty for him. He tells you");
         text.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        text.setPreferredSize(new java.awt.Dimension(75, 25));
 
         botBut.setText("Fight");
+        botBut.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botButActionPerformed(evt);
+            }
+        });
 
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("What do you do?");
 
         topBut.setText("Call for help");
+        topBut.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                topButActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -64,38 +77,49 @@ public class WarriorStart extends javax.swing.JFrame {
                                 .addGap(247, 247, 247)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(botBut, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(topBut, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(0, 0, Short.MAX_VALUE))
+                                    .addComponent(topBut, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(text, javax.swing.GroupLayout.DEFAULT_SIZE, 3163, Short.MAX_VALUE)))
-                        .addContainerGap())
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(70, 70, 70)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                                .addGap(70, 70, 70)
+                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(text, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(text)
-                        .addGap(138, 138, 138)
+                        .addComponent(text, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(114, 114, 114)
                         .addComponent(jLabel2)
                         .addGap(18, 18, 18)
                         .addComponent(topBut, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(botBut, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void topButActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_topButActionPerformed
+         Adventurer2.user().addPathChoice(1);
+         new Warrior1().contPath();
+         this.dispose();
+    }//GEN-LAST:event_topButActionPerformed
+
+    private void botButActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botButActionPerformed
+         Adventurer2.user().addPathChoice(1);
+         new Warrior2().contPath();
+         this.dispose();
+    }//GEN-LAST:event_botButActionPerformed
 
     /**
      * @param args the command line arguments
@@ -136,21 +160,7 @@ public class WarriorStart extends javax.swing.JFrame {
     int[] path = user().getPath();
     
     public void contPath(){
-        if(path.length >= 3){
-            //Hermit1.contPath();
-        }else{
-            switch(path[1]){
-                case 3:
-                    leftPath();
-                    break;
-                case 2:
-                   // Hermit1.rightPath();
-                    break;
-                default:
-                    System.out.println("Something went seriously wrong. Good luck.");
-                    break;
-            }
-        }
+        leftPath();
     }
     
     public void leftPath(){
